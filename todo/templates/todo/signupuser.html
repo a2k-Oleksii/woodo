@@ -1,0 +1,42 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <h1 style="color: #ff4057">Sing Up</h1>
+    </div>
+</div>
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username" style="color: #ff4057">Username</label>
+                <input type="text" name="username" class="form-control" id="username">
+            </div>
+            <div class="form-group">
+                <label for="password1" style="color: #ff4057">Password</label>
+                <input type="password" name="password1" class="form-control" id="password1">
+            </div>
+            <div class="form-group">
+                <label for="password2" style="color: #ff4057">Confirm Your Password</label>
+                <input type="password" name="password2" class="form-control" id="password2">
+            </div>
+            <button type="submit" class="btn mt-2" style="background-color: #ff4057">Save</button>
+        </form>
+    </div>
+</div>
+
+
+<!--    <form method="POST">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">Sign Up</button>-->
+<!--    </form>-->
+
+{% endblock %}
