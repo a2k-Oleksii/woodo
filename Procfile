@@ -1,1 +1,1 @@
-web: gunicorn todowoodo.wsgi --log-file
+web: gunicorn wsgi:app
