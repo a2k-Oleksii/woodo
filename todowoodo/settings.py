@@ -27,7 +27,7 @@ SECRET_KEY = env.str("SECRET_KEY", "Ensure you set a secret key, this is importa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", cast=str, default=["*"])
+ALLOWED_HOSTS = ['woodo.herokuapp.com']
 
 # Application definition
 
@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
-        'NAME': os.environ.get('POSTGRES_DB', 'woodo'),
+        'NAME': os.environ.get('POSTGRES_DB', ''),
         'USER': os.environ.get('POSTGRES_USER', 'woodouser'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'w00d()-p@$$w()rd'),
         'PORT': os.environ.get('POSTGRES_PORT', '5432'),
